@@ -12,3 +12,5 @@ g++ 5-10-setsendbuffer.c -o setsendbuffer
 g++ 5-11-setrecvbuffer.c -o setrecvbuffer
 g++ 5-12-daytime.c -o daytime
 g++ 6-1-dup-cgi.c -o  dup-cgi
+g++ 6-2-web-writev.c -o web-writev
+
