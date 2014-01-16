@@ -1,6 +1,9 @@
 # !/bin/sh
 
 #simple make command
+g++ -Wall epollclient.cpp -o epollclient
+g++ -Wall epollserver.cpp -o epollserver
+
 g++ 5-3-testlisten.c -o testlisten
 g++ 5-5-testaccept.c -o testaccept
 g++ 5-6-testoobsend.c -o testoobsend

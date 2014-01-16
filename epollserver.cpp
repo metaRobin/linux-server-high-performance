@@ -116,7 +116,7 @@ int main(int argc, char* argv[])
                 printf("FILE:%s, LINE:%d, accept a connection from %s, created sockfd:%d\n", __FILE__, __LINE__, str_ip, connfd);
                 struct epoll_event ev;
                 ev.data.fd = connfd;   //set connected socket fd to epoll struct
-                ev.events  = EPOLLIN|EPOLLET;
+                ev.events  = EPOLLIN;
                 epoll_ctl(epollfd, EPOLL_CTL_ADD, connfd, &ev);   //add a new tcp connection to epoll
             }
             else if(events[i].data.fd == udpfd_listener) //if it's udp epoll event fd
@@ -204,7 +204,7 @@ int main(int argc, char* argv[])
 
                 struct epoll_event ev;
                 ev.data.fd = sockfd;
-                ev.events  = EPOLLOUT|EPOLLET;
+                ev.events  = EPOLLOUT;
                 epoll_ctl(epollfd, EPOLL_CTL_MOD, sockfd, &ev);
             }
             else if(events[i].events & EPOLLOUT) // 如果有数据发送
@@ -232,7 +232,7 @@ int main(int argc, char* argv[])
 
                 struct epoll_event ev;
                 ev.data.fd=sockfd;
-                ev.events = EPOLLIN|EPOLLET;
+                ev.events = EPOLLIN;
                 epoll_ctl(epollfd, EPOLL_CTL_MOD, sockfd, &ev);
             }//
         }//for(int i; i < nfds; ++i)

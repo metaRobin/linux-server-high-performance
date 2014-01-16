@@ -55,6 +55,9 @@ int main(int argc, const char *argv[])
         memset(buffer, '\0', BUFFER_SIZE);
         while(recv(connfd, buffer, BUFFER_SIZE, 0) > 0) {}
         close(connfd);
+        char client_ip[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, (void *)&client.sin_addr, client_ip, (socklen_t )INET_ADDRSTRLEN);
+        printf("Recv data from %s, data content is:%s\n", client_ip, buffer);
     }
 
     close(sock);

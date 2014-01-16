@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
     struct epoll_event events[MAX_EPOLL_SIZE];
     int epollfd = epoll_create(1024);
 
-    //TODO: create connections
     open_connections(conn_count, conn_fds, &server_addr);
     //ADD connection fds to epoll
     epoll_add_connections(epollfd, conn_count, conn_fds);
@@ -113,7 +112,7 @@ int main(int argc, char *argv[])
                 fprintf(stdout, "sockfd(%d), RECV DATA: %s\n", sockfd, recv_buf);
 
                 struct epoll_event ev;
-                ev.events = EPOLLOUT | EPOLLET;
+                ev.events = EPOLLOUT;
                 ev.data.fd = sockfd;
                 if(epoll_ctl(epollfd, EPOLL_CTL_MOD, sockfd, &ev) < 0)
                 {
@@ -126,10 +125,10 @@ int main(int argc, char *argv[])
                 //send data to server
                 char send_buf[BUF_SIZE + 1];
                 bzero(send_buf, BUF_SIZE + 1);
-                int cur_time = time(NULL);
+                int cur_time = (int) time(NULL);
                 snprintf(send_buf, BUF_SIZE, "Hello, I'm client my socket fd is %d, time:%d\n", sockfd, cur_time);
                 int send_size = send(sockfd, send_buf, strlen(send_buf), 0);
-                if(send_size != strlen(send_buf))
+                if(send_size != (int) strlen(send_buf))
                 {
                     fprintf(stderr, "fd(%d) send data to server error!\n", sockfd);
                     close(sockfd);
@@ -137,7 +136,7 @@ int main(int argc, char *argv[])
                 }
 
                 struct epoll_event ev;
-                ev.events = EPOLLIN | EPOLLET;
+                ev.events = EPOLLIN;
                 ev.data.fd = sockfd;
                 if(epoll_ctl(epollfd, EPOLL_CTL_MOD, sockfd, &ev) < 0)
                 {
@@ -171,6 +170,7 @@ int open_connections(int conn_count, int *conn_fds, struct sockaddr_in *server_a
             continue;
         }
     }//for
+    return 0;
 }
 
 int epoll_add_connections(int epollfd, int conn_count, int *conn_fds)
@@ -187,4 +187,5 @@ int epoll_add_connections(int epollfd, int conn_count, int *conn_fds)
            continue;
        }
     }
+    return 0;
 }
