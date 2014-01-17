@@ -14,4 +14,5 @@ g++ 5-12-daytime.c -o daytime
 g++ 6-1-dup-cgi.c -o  dup-cgi
 g++ 6-2-web-writev.c -o web-writev
 g++ 6-3-sendfile.c -o sendfiletest
+g++ 6-4-splice.c   -o splicetest
 
