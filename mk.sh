@@ -16,4 +16,5 @@ g++ 6-2-web-writev.c -o web-writev
 g++ 6-3-sendfile.c -o sendfiletest
 g++ 6-4-splice.c   -o splicetest
 g++ 6-5-tee.c -o teetest 
+g++ 7-1-uideuid.c -o uideuidtest
 
