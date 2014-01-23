@@ -17,4 +17,7 @@ g++ 6-3-sendfile.c -o sendfiletest
 g++ 6-4-splice.c   -o splicetest
 g++ 6-5-tee.c -o teetest 
 g++ 7-1-uideuid.c -o uideuidtest
+g++ 8-3-http-analyze.c -o http-analyze 
+g++ 9-1-select-recvdata.c -o select-recvdata 
+g++ 9-3-epoll-ltandet.c -o epoll-ltoret
 
