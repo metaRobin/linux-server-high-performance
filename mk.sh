@@ -24,3 +24,4 @@ g++ 9-4-epolloneshot.c -o epolloneshottest -lpthread
 g++ 9-5-nonblock-connect.c -o nonblock-connect
 g++ 9-6-client.c -o client-topic
 g++ 9-7-server.c -o server-topic
+g++ 9-8-tcp-udp.c -o tcp-udp-server
