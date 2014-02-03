@@ -21,3 +21,6 @@ g++ 8-3-http-analyze.c -o http-analyze
 g++ 9-1-select-recvdata.c -o select-recvdata 
 g++ 9-3-epoll-ltandet.c -o epoll-ltoret
 g++ 9-4-epolloneshot.c -o epolloneshottest -lpthread
+g++ 9-5-nonblock-connect.c -o nonblock-connect
+g++ 9-6-client.c -o client-topic
+g++ 9-7-server.c -o server-topic
