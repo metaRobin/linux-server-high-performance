@@ -18,7 +18,7 @@
 int setnonblocking(int fd)
 {
     int old_option = fcntl(fd, F_GETFL);
-    int new_option = old_option O_NONBLOCK;
+    int new_option = old_option | O_NONBLOCK;
     fcntl(fd, F_SETFL, new_option);
     return old_option;
 }
@@ -48,7 +48,7 @@ int unblock_connect(const char* ip, int port, int time)
     }
 
     fd_set readfds;
-    fd_set writedfds;
+    fd_set writefds;
     struct timeval timeout;
 
     FD_ZERO(&readfds);

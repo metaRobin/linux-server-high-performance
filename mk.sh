@@ -25,3 +25,4 @@ g++ 9-5-nonblock-connect.c -o nonblock-connect
 g++ 9-6-client.c -o client-topic
 g++ 9-7-server.c -o server-topic
 g++ 9-8-tcp-udp.c -o tcp-udp-server
+g++ 10-1-unify-signal.c -o unified-signal
