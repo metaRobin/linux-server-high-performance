@@ -37,7 +37,7 @@ int main(int argc, const char *argv[])
         const char *normal_data = "123";
         send(sockfd, normal_data, strlen(normal_data), 0);
         send(sockfd, oob_data, strlen(oob_data), MSG_OOB);
-        send(sockfd, normal_data, strlen(normal_data), 0);
+        /* send(sockfd, normal_data, strlen(normal_data), 0); */
     }
     
     close(sockfd);
