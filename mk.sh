@@ -27,3 +27,4 @@ g++ 9-7-server.c -o server-topic
 g++ 9-8-tcp-udp.c -o tcp-udp-server
 g++ 10-1-unify-signal.c -o unified-signal
 g++ 10-3-sigurg-signal.c -o sigurg-signal
+gcc 13-3-ipc_private.c -o ipc-private
