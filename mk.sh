@@ -28,3 +28,4 @@ g++ 9-8-tcp-udp.c -o tcp-udp-server
 g++ 10-1-unify-signal.c -o unified-signal
 g++ 10-3-sigurg-signal.c -o sigurg-signal
 gcc 13-3-ipc_private.c -o ipc-private
+g++ 13-4-shm-chatroom.c -o shm-chatroom -lrt
