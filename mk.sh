@@ -31,4 +31,5 @@ gcc 13-3-ipc_private.c -o ipc-private
 g++ 13-4-shm-chatroom.c -o shm-chatroom -lrt
 g++ 13-5-send-fd.c -o send-fd
 g++ 14-1-dead-lock.c -o dea-lock -lpthread
+g++ 14-3-multi-thread-fork.c -o multi-thread-fork -lpthread
 
