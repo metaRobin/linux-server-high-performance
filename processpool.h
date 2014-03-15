@@ -81,6 +81,9 @@ private:
     static processpool<T> *m_instance;
 };
 
+template< typename T>
+processpool<T> *processpool<T>::m_instance = NULL;
+
 //pipe used to handle signal 
 static int sig_pipefd[2];
 
@@ -144,7 +147,7 @@ processpool<T>::processpool(int listenfd, int process_number)
     for(int i = 0; i < process_number; i++) 
     {
         int ret = socketpair(PF_UNIX, SOCK_STREAM, 0, m_sub_process[i].m_pipefd);
-        assert(ret = 0);
+        assert(ret == 0);
 
         m_sub_process[i].m_pid = fork();
         assert(m_sub_process[i].m_pid >= 0);
