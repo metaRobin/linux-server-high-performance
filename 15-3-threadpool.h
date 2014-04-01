@@ -7,7 +7,7 @@
 #include <pthread.h>
 
 /*引入第14章的线程同步机制的包装类*/
-#include "locker.h"
+#include "14-2-locker.h"
 
 /*线程池类，将它定义为模板类是为了代码复用。模板参数T是任务类*/
 template <typename T>
@@ -39,7 +39,7 @@ private:
 
 template<typename T>
 threadpool<T>::threadpool(int thread_number, int max_requests):
-    m_thread_number(thread_nubmer), m_max_requests(max_requests),
+    m_thread_number(thread_number), m_max_requests(max_requests),
     m_stop(false), m_threads(NULL)
 {
     if ((thread_number <= 0) || (max_requests <= 0))
